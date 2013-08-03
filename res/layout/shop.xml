@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@android:color/holo_orange_dark" android:paddingTop="50dp" android:paddingLeft="35dp">
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="名称："
+                android:id="@+id/textView" android:layout_column="1"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText" android:layout_column="3" android:width="200dp"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地址："
+                android:id="@+id/textView1" android:layout_column="1"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText1" android:layout_column="3"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="介绍："
+                android:id="@+id/textView2" android:layout_column="1"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@id/textView2" android:layout_column="3" android:password="false"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="保存"
+                android:id="@+id/save" android:layout_column="3"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:id="@+id/back" android:layout_column="3"/>
+    </TableRow>
+</TableLayout>

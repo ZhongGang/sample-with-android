@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">sample-with-android</string>
+    <string name="tip">提示</string>
+    <string name="save">正在进行保存！</string>
+    <string name="login">确定要进行登录吗？</string>
+</resources>
