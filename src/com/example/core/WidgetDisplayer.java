@@ -30,17 +30,10 @@ public class WidgetDisplayer {
         widgetDisplays.add(new TimeWidgetDisplay(activity));
         widgetDisplays.add(new CalendarWidgetDisplay(activity));
 
-        boolean success = false;
-
         for (WidgetDisplay widgetDisplay : widgetDisplays) {
             if (widgetDisplay.support()) {
-                success = true;
                 widgetDisplay.display();
             }
-        }
-
-        if (!success) {
-            new DateWidgetDisplay(activity).display();
         }
     }
 
@@ -90,7 +83,7 @@ public class WidgetDisplayer {
 
         @Override
         protected String equalsName() {
-            return "date";
+            return "日期";
         }
 
     }
@@ -108,7 +101,7 @@ public class WidgetDisplayer {
 
         @Override
         protected String equalsName() {
-            return "time";
+            return "时间";
         }
     }
 
@@ -125,7 +118,7 @@ public class WidgetDisplayer {
 
         @Override
         protected String equalsName() {
-            return "calendar";
+            return "日历";
         }
     }
 }

@@ -5,7 +5,8 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.*;
+import com.example.core.WidgetDisplayer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,33 +39,20 @@ public class ShopForm extends Activity {
             }
         });
 
-        Button timeViewBtn = (Button) findViewById(R.id.timeView);
-        timeViewBtn.setOnClickListener(new View.OnClickListener() {
+        Spinner widgetSelect = (Spinner) findViewById(R.id.widgetSelect);
+        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.widgets, android.R.layout.simple_spinner_item);
+        widgetSelect.setAdapter(adapter);
+        widgetSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(ShopForm.this, Time.class);
-                startActivity(intent);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView name = (TextView) findViewById(R.id.name);
+                name.setText(adapter.getItem(i));
+                WidgetDisplayer displayer = new WidgetDisplayer(ShopForm.this);
+                displayer.display();
             }
-        });
 
-        Button dateViewBtn = (Button) findViewById(R.id.dateView);
-        dateViewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(ShopForm.this, Date.class);
-                startActivity(intent);
-            }
-        });
-
-        Button calendarViewBtn = (Button) findViewById(R.id.calendarView);
-        calendarViewBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(ShopForm.this, Calendar.class);
-                startActivity(intent);
+            public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
     }
