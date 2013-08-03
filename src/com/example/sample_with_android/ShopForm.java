@@ -3,6 +3,7 @@ package com.example.sample_with_android;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,16 @@ public class ShopForm extends Activity {
                 Intent intent = new Intent();
                 intent.setClass(ShopForm.this, LoginForm.class);
                 startActivity(intent);
+            }
+        });
+
+        Button viewBtn = (Button) findViewById(R.id.view);
+        viewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent viewIntent = new
+                        Intent("android.intent.action.VIEW", Uri.parse("http://www.163.com"));
+                startActivity(viewIntent);
             }
         });
     }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">sample-with-android</string>
+    <string name="login.form">登录入口</string>
+    <string name="shop.form">创建商铺</string>
     <string name="tip">提示</string>
-    <string name="save">正在进行保存！</string>
-    <string name="login">确定要进行登录吗？</string>
+    <string name="save">正在进行保存，请稍候！</string>
+    <string name="login">正在进行登录，请稍候！</string>
 </resources>

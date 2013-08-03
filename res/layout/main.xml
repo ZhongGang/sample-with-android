@@ -1,35 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
+<TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="@android:color/holo_orange_dark">
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="账号："
-            android:id="@+id/textView" android:layout_gravity="left|center_vertical"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="密码："
-            android:id="@+id/textView1" android:layout_gravity="left|bottom"/>
-    <EditText
-            android:layout_width="186dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText1" android:layout_gravity="center_horizontal|bottom"/>
-    <EditText
-            android:layout_width="192dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText" android:layout_gravity="center"/>
-    <Button
-            android:layout_width="66dp"
-            android:layout_height="wrap_content"
-            android:text="登录"
-            android:id="@+id/login" android:layout_gravity="right|top"/>
-    <Button
-            android:layout_width="77dp"
-            android:layout_height="wrap_content"
-            android:text="跳转"
-            android:id="@+id/redirect" android:layout_gravity="left|top" android:textStyle="bold|italic"/>
-</FrameLayout>
+        android:background="@android:color/holo_orange_dark" android:paddingLeft="25dp" android:paddingTop="80dp"
+        android:orientation="horizontal">
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账 号："
+                android:id="@+id/username" android:layout_column="2" android:textSize="20dp"
+                android:textColor="#010101"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText" android:layout_column="4" android:width="200dp"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密 码："
+                android:id="@+id/password" android:layout_column="2" android:textSize="20dp"
+                android:textColor="#010101"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText1" android:layout_column="4" android:password="true"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登 录"
+                android:id="@+id/login" android:layout_column="4" android:textStyle="bold" android:textSize="25dp"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="创 建 商 铺"
+                android:id="@+id/redirect" android:layout_column="4" android:textSize="25dp" android:textStyle="bold"/>
+    </TableRow>
+</TableLayout>

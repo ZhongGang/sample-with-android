@@ -18,8 +18,9 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="名称："
-                android:id="@+id/textView" android:layout_column="1"/>
+                android:text="名 称："
+                android:id="@+id/textView" android:layout_column="1" android:textSize="20dp"
+                android:textColor="#010001"/>
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,8 +36,9 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="地址："
-                android:id="@+id/textView1" android:layout_column="1"/>
+                android:text="地 址："
+                android:id="@+id/textView1" android:layout_column="1" android:textSize="20dp"
+                android:textColor="#010001"/>
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,8 +58,9 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="介绍："
-                android:id="@+id/textView2" android:layout_column="1"/>
+                android:text="介 绍："
+                android:id="@+id/textView2" android:layout_column="1" android:textSize="20dp"
+                android:textColor="#010001"/>
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,8 +76,8 @@
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="保存"
-                android:id="@+id/save" android:layout_column="3"/>
+                android:text="保 存"
+                android:id="@+id/save" android:layout_column="3" android:textStyle="bold" android:textSize="25dp"/>
     </TableRow>
     <TableRow
             android:layout_width="fill_parent"
@@ -82,7 +85,16 @@
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="返回"
-                android:id="@+id/back" android:layout_column="3"/>
+                android:text="返 回"
+                android:id="@+id/back" android:layout_column="3" android:textSize="25dp" android:textStyle="bold"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查 看"
+                android:id="@+id/view" android:layout_column="3" android:textSize="25dp" android:textStyle="bold"/>
     </TableRow>
 </TableLayout>
