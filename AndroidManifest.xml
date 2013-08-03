@@ -13,5 +13,8 @@
             </intent-filter>
         </activity>
         <activity android:name="ShopForm" android:label="@string/shop.form"/>
+        <activity android:name="Date" android:label="@string/date"/>
+        <activity android:name="Time" android:label="@string/time"/>
+        <activity android:name="Calendar" android:label="@string/calendar"/>
     </application>
 </manifest>

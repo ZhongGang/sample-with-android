@@ -3,15 +3,7 @@
 <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="@android:color/holo_orange_dark" android:paddingTop="50dp" android:paddingLeft="35dp">
-    <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-    </TableRow>
-    <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-    </TableRow>
+        android:background="@android:color/holo_orange_dark" android:paddingLeft="35dp" android:paddingTop="5dp">
     <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
@@ -24,11 +16,7 @@
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText" android:layout_column="3" android:width="200dp"/>
-    </TableRow>
-    <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+                android:id="@+id/name" android:layout_column="3" android:width="200dp"/>
     </TableRow>
     <TableRow
             android:layout_width="fill_parent"
@@ -47,14 +35,6 @@
     <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-    </TableRow>
-    <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-    </TableRow>
-    <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -65,10 +45,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@id/textView2" android:layout_column="3" android:password="false"/>
-    </TableRow>
-    <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
     </TableRow>
     <TableRow
             android:layout_width="fill_parent"
@@ -94,7 +70,26 @@
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="查 看"
-                android:id="@+id/view" android:layout_column="3" android:textSize="25dp" android:textStyle="bold"/>
+                android:text="时 间 查 看"
+                android:id="@+id/timeView" android:layout_column="3" android:textSize="25dp" android:textStyle="bold"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日 期 查 看"
+                android:id="@+id/dateView" android:layout_column="3" android:textSize="25dp" android:textStyle="bold"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日 历 查 看"
+                android:id="@+id/calendarView" android:layout_column="3" android:textSize="25dp"
+                android:textStyle="bold"/>
     </TableRow>
 </TableLayout>
