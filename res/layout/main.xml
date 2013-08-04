@@ -79,4 +79,20 @@
                 android:text="创 建 商 铺"
                 android:id="@+id/redirect" android:layout_column="4" android:textSize="25dp" android:textStyle="bold"/>
     </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn="关 闭 闪 光 灯"
+                android:textOff="打 开 闪 光 灯"
+                android:id="@+id/flashLightBtn" android:layout_column="4" android:checked="false"
+                android:textSize="25dp" android:textStyle="bold" android:textColor="@android:color/black"
+                />
+    </TableRow>
 </TableLayout>
