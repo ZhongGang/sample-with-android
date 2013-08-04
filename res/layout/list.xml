@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:id="@+id/listLinearLayout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="@android:color/holo_orange_dark">
+
+    <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"/>
+    <Button
+            android:layout_width="157dp"
+            android:layout_height="wrap_content"
+            android:text="返 回"
+            android:id="@+id/back" android:layout_gravity="center" android:textSize="25dp" android:textStyle="bold"
+            />
+</LinearLayout>

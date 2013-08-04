@@ -10,16 +10,16 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="日  历"
+                android:text="计 时 器"
                 android:id="@+id/calendar" android:layout_column="2" android:textSize="40dp"/>
     </TableRow>
     <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-        <CalendarView
+        <AnalogClock
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/calendarPicker" android:layout_column="2" android:minHeight="200dp"/>
+                android:id="@+id/analogClock" android:layout_column="2"/>
     </TableRow>
     <TableRow
             android:layout_width="fill_parent"

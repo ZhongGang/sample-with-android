@@ -30,4 +30,13 @@
                 android:text="返  回"
                 android:id="@+id/back" android:layout_column="1" android:textStyle="bold" android:textSize="25dp"/>
     </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="列 表 数 据 展 示"
+                android:id="@+id/listBtn" android:layout_column="1" android:textStyle="bold" android:textSize="25dp"/>
+    </TableRow>
 </TableLayout>

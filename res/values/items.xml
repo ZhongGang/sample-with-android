@@ -6,4 +6,12 @@
         <item>日期</item>
         <item>日历</item>
     </string-array>
+
+    <string-array name="listData">
+        <item>测试数据一</item>
+        <item>测试数据二</item>
+        <item>测试数据三</item>
+        <item>测试数据四</item>
+        <item>测试数据五</item>
+    </string-array>
 </resources>

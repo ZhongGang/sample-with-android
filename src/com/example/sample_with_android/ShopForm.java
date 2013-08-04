@@ -40,7 +40,7 @@ public class ShopForm extends Activity {
         });
 
         Spinner widgetSelect = (Spinner) findViewById(R.id.widgetSelect);
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.widgets, android.R.layout.simple_spinner_item);
+        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.widgets, android.R.layout.simple_spinner_dropdown_item);
         widgetSelect.setAdapter(adapter);
         widgetSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

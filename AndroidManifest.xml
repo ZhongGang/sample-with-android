@@ -16,5 +16,6 @@
         <activity android:name="Date" android:label="@string/date"/>
         <activity android:name="Time" android:label="@string/time"/>
         <activity android:name="Calendar" android:label="@string/calendar"/>
+        <activity android:name="ListData" android:label="@string/list"/>
     </application>
 </manifest>
