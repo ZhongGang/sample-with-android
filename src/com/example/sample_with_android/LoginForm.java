@@ -3,12 +3,12 @@ package com.example.sample_with_android;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.hardware.Camera;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
+import com.example.core.FlashLightController;
 
 public class LoginForm extends Activity {
     /**
@@ -41,31 +41,10 @@ public class LoginForm extends Activity {
         flashLightBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Camera camera = Camera.open();
-                if (isChecked) {
-                    turnOnFlashLight(camera);
-                } else {
-                    turnOffFlashLight(camera);
-                }
+                FlashLightController flashLightController = new FlashLightController(isChecked);
+                flashLightController.controller();
             }
         });
-    }
-
-    private void turnOffFlashLight(Camera camera) {
-        if (camera != null) {
-            Camera.Parameters parameters = camera.getParameters();
-            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-            camera.setParameters(parameters);
-            camera.release();
-        }
-    }
-
-    private void turnOnFlashLight(Camera camera) {
-        if (camera != null) {
-            Camera.Parameters parameters = camera.getParameters();
-            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-            camera.setParameters(parameters);
-        }
     }
 
 }
