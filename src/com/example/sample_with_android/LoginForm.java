@@ -32,6 +32,7 @@ public class LoginForm extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
+                intent.putExtra("shopName", "星运超市");
                 intent.setClass(LoginForm.this, ShopForm.class);
                 startActivity(intent);
             }

@@ -44,7 +44,7 @@
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@id/textView2" android:layout_column="3" android:password="false"/>
+                android:id="@+id/description" android:layout_column="3" android:password="false"/>
     </TableRow>
     <TableRow
             android:layout_width="fill_parent"

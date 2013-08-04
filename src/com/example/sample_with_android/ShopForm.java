@@ -21,6 +21,11 @@ public class ShopForm extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shop);
 
+        Intent intent = getIntent();
+        String shopName = intent.getStringExtra("shopName");
+        EditText descriptionInput = (EditText) findViewById(R.id.description);
+        descriptionInput.setText(shopName);
+
         Button saveBtn = (Button) findViewById(R.id.save);
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
