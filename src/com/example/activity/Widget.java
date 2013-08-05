@@ -10,8 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
 import com.example.core.FlashLightController;
-import com.example.sample_with_android.R;
-import com.example.sample_with_android.ShopForm;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package com.example.sample_with_android;
+package com.example.activity;
 
 import android.app.Activity;
 import android.content.Intent;

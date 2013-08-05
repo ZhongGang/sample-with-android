@@ -3,11 +3,7 @@ package com.example.core;
 import android.app.Activity;
 import android.content.Intent;
 import android.widget.EditText;
-import com.example.activity.Widget;
-import com.example.sample_with_android.Calendar;
-import com.example.sample_with_android.Date;
-import com.example.sample_with_android.R;
-import com.example.sample_with_android.Time;
+import com.example.activity.*;
 
 import java.util.ArrayList;
 import java.util.List;

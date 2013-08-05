@@ -1,6 +1,6 @@
 /*___Generated_by_IDEA___*/
 
-package com.example.sample_with_android;
+package com.example.activity;
 
 /* This stub is for using by IDE only. It is NOT the Manifest class actually packed into APK */
 public final class Manifest {
