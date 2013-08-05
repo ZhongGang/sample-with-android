@@ -1,10 +1,10 @@
 package com.example.activity;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
+import android.app.*;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -109,6 +109,27 @@ public class Widget extends Activity {
                 Toast toast = Toast.makeText(Widget.this, R.string.save, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.BOTTOM, 0, 0);
                 toast.show();
+            }
+        });
+
+        Button notificationBtn = (Button) findViewById(R.id.notificationBtn);
+        notificationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+                Notification notification = new Notification();
+                notification.tickerText = "这是一个通知！";
+                notification.icon = android.R.drawable.stat_notify_chat;
+                notification.when = System.currentTimeMillis();
+                notification.sound = Uri.withAppendedPath(MediaStore.Audio.Media.INTERNAL_CONTENT_URI, "10");
+                notification.flags = Notification.FLAG_INSISTENT;
+                notification.vibrate = new long[]{0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
+                Intent intent = new Intent(Widget.this, Widget.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(Widget.this, 0, intent, 0);
+                notification.setLatestEventInfo(Widget.this, "下拉通知标题", "下拉通知内容", pendingIntent);
+
+                notificationManager.notify(1, notification);
             }
         });
     }
