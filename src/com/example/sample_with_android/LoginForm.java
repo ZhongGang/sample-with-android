@@ -37,15 +37,6 @@ public class LoginForm extends Activity {
                 startActivity(intent);
             }
         });
-
-        ToggleButton flashLightBtn = (ToggleButton) findViewById(R.id.flashLightBtn);
-        flashLightBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                FlashLightController flashLightController = new FlashLightController(isChecked);
-                flashLightController.controller();
-            }
-        });
     }
 
 }

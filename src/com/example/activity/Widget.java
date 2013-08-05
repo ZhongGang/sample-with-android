@@ -8,9 +8,8 @@ import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.Toast;
+import android.widget.*;
+import com.example.core.FlashLightController;
 import com.example.sample_with_android.R;
 import com.example.sample_with_android.ShopForm;
 
@@ -24,6 +23,7 @@ public class Widget extends Activity {
 
     private ProgressDialog progressDialog;
     private ProgressDialog circleProgressDialog;
+    private ToggleButton toggleBtn;
 
 
     @Override
@@ -155,6 +155,15 @@ public class Widget extends Activity {
                 toast.setGravity(Gravity.BOTTOM, 0, 0);
                 toast.show();
                 return true;
+            }
+        });
+
+        toggleBtn = (ToggleButton) findViewById(R.id.toggleBtn);
+        toggleBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                FlashLightController controller = new FlashLightController(isChecked);
+                controller.controller();
             }
         });
     }
