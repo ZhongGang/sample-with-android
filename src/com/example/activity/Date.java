@@ -24,17 +24,7 @@ public class Date extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(Date.this, ShopForm.class);
-                startActivity(intent);
-            }
-        });
-
-        Button listBtn = (Button) findViewById(R.id.listBtn);
-        listBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(Date.this, ListData.class);
+                intent.setClass(Date.this, Decorator.class);
                 startActivity(intent);
             }
         });

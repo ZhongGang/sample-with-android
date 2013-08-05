@@ -3,7 +3,7 @@
 <GridLayout
         android:layout_width="fill_parent" android:id="@+id/widgetsGridLayout"
         android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
-        android:columnCount="3" android:rowCount="3" android:background="@android:color/holo_blue_light"
+        android:columnCount="3" android:rowCount="3" android:background="#33B5E5"
         android:useDefaultMargins="true" android:paddingTop="30dp">
     <Button
             android:layout_width="99dp"

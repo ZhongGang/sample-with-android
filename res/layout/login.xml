@@ -48,7 +48,7 @@
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="创 建 商 铺"
-                android:id="@+id/redirect" android:layout_column="4" android:textSize="25dp" android:textStyle="bold"/>
+                android:text="返 回"
+                android:id="@+id/backBtn" android:layout_column="4" android:textSize="25dp" android:textStyle="bold"/>
     </TableRow>
 </TableLayout>

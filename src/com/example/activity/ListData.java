@@ -31,7 +31,7 @@ public class ListData extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(ListData.this, ShopForm.class);
+                intent.setClass(ListData.this, Decorator.class);
                 startActivity(intent);
             }
         });

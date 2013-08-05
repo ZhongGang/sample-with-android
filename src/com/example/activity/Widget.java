@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
 import com.example.core.FlashLightController;
+import com.example.core.IntentRedirector;
 
 /**
  * Created with IntelliJ IDEA.
@@ -51,9 +52,7 @@ public class Widget extends Activity implements GestureDetector.OnGestureListene
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Widget.this, ShopForm.class);
-                startActivity(intent);
+                IntentRedirector.redirect(Widget.this, Decorator.class);
             }
         });
 

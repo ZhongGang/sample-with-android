@@ -2,7 +2,7 @@ package com.example.core;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.widget.EditText;
+import android.widget.Spinner;
 import com.example.activity.*;
 
 import java.util.ArrayList;
@@ -51,8 +51,8 @@ public class WidgetDisplayer {
 
         @Override
         public boolean support() {
-            EditText name = (EditText) activity.findViewById(R.id.name);
-            String content = name.getText().toString();
+            Spinner spinner = (Spinner) activity.findViewById(R.id.selectBtn);
+            String content = (String) spinner.getSelectedItem();
             return content.trim().equalsIgnoreCase(equalsName());
         }
 

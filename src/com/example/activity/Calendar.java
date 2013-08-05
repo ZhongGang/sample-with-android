@@ -24,7 +24,7 @@ public class Calendar extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(Calendar.this, ShopForm.class);
+                intent.setClass(Calendar.this, Decorator.class);
                 startActivity(intent);
             }
         });

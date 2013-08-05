@@ -14,7 +14,7 @@ public class LoginForm extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.login);
 
         Button loginBtn = (Button) findViewById(R.id.login);
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -24,13 +24,13 @@ public class LoginForm extends Activity {
             }
         });
 
-        Button redirectBtn = (Button) findViewById(R.id.redirect);
-        redirectBtn.setOnClickListener(new View.OnClickListener() {
+        Button backBtn = (Button) findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.putExtra("shopName", "星运超市");
-                intent.setClass(LoginForm.this, ShopForm.class);
+                intent.setClass(LoginForm.this, Decorator.class);
                 startActivity(intent);
             }
         });

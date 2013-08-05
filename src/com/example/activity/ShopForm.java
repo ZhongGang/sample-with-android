@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.*;
-import com.example.core.WidgetDisplayer;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created with IntelliJ IDEA.
@@ -39,25 +40,8 @@ public class ShopForm extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(ShopForm.this, LoginForm.class);
+                intent.setClass(ShopForm.this, Decorator.class);
                 startActivity(intent);
-            }
-        });
-
-        Spinner widgetSelect = (Spinner) findViewById(R.id.widgetSelect);
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.widgets, android.R.layout.simple_spinner_dropdown_item);
-        widgetSelect.setAdapter(adapter);
-        widgetSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                TextView name = (TextView) findViewById(R.id.name);
-                name.setText(adapter.getItem(i));
-                WidgetDisplayer displayer = new WidgetDisplayer(ShopForm.this);
-                displayer.display();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
     }

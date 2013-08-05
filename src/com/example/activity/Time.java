@@ -24,7 +24,7 @@ public class Time extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(Time.this, ShopForm.class);
+                intent.setClass(Time.this, Decorator.class);
                 startActivity(intent);
             }
         });
