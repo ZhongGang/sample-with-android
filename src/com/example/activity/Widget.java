@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,11 +18,12 @@ import com.example.core.FlashLightController;
  * Date: 13-8-5
  * Time: 下午2:30
  */
-public class Widget extends Activity {
+public class Widget extends Activity implements GestureDetector.OnGestureListener {
 
     private ProgressDialog progressDialog;
     private ProgressDialog circleProgressDialog;
     private ToggleButton toggleBtn;
+    private GestureDetector gestureDetector = new GestureDetector(Widget.this);
 
 
     @Override
@@ -30,13 +32,18 @@ public class Widget extends Activity {
         setContentView(R.layout.widgets);
 
         GridLayout gridLayout = (GridLayout) findViewById(R.id.widgetsGridLayout);
+        gridLayout.setFocusable(true);
+        gridLayout.setClickable(true);
+        gridLayout.setLongClickable(true);
+        gestureDetector.setIsLongpressEnabled(true);
+
         gridLayout.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Toast toast = Toast.makeText(Widget.this, R.string.touch, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.BOTTOM, 0, 0);
                 toast.show();
-                return true;
+                return gestureDetector.onTouchEvent(event);
             }
         });
 
@@ -164,5 +171,51 @@ public class Widget extends Activity {
                 controller.controller();
             }
         });
+    }
+
+    @Override
+    public boolean onDown(MotionEvent e) {
+        Toast toast = Toast.makeText(Widget.this, R.string.gesture_down, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+        return true;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent e) {
+        Toast toast = Toast.makeText(Widget.this, R.string.gesture_show_press, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        Toast toast = Toast.makeText(Widget.this, R.string.gesture_single_tap_up, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+        return true;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        Toast toast = Toast.makeText(Widget.this, R.string.gesture_scroll, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+        return true;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent e) {
+        Toast toast = Toast.makeText(Widget.this, R.string.gesture_long_press, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        Toast toast = Toast.makeText(Widget.this, R.string.gesture_fling, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+        return true;
     }
 }

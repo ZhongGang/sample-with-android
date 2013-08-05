@@ -13,4 +13,10 @@
     <string name="list">列表展示数据</string>
     <string name="widgets">组件</string>
     <string name="touch">你触摸了我，你个坏淫，休得无礼！</string>
+    <string name="gesture_down">触发了OnDown事件！！！</string>
+    <string name="gesture_show_press">触发了OnShowPress事件！！！</string>
+    <string name="gesture_single_tap_up">触发了OnSingleTapUp事件！！！</string>
+    <string name="gesture_scroll">触发了OnScroll事件！！！</string>
+    <string name="gesture_long_press">触发了OnLongPress事件！！！</string>
+    <string name="gesture_fling">触发了OnFling事件！！！</string>
 </resources>
