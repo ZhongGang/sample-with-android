@@ -6,8 +6,10 @@
     <string name="tip">提示</string>
     <string name="save">正在进行保存，请稍候！</string>
     <string name="login">正在进行登录，请稍候！</string>
+    <string name="dialog_message">这是一个对话框组件显示！</string>
     <string name="time">时间</string>
     <string name="date">日期</string>
     <string name="calendar">日历</string>
     <string name="list">列表展示数据</string>
+    <string name="widgets">组件</string>
 </resources>

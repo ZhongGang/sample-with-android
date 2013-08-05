@@ -3,6 +3,7 @@ package com.example.core;
 import android.app.Activity;
 import android.content.Intent;
 import android.widget.EditText;
+import com.example.activity.Widget;
 import com.example.sample_with_android.Calendar;
 import com.example.sample_with_android.Date;
 import com.example.sample_with_android.R;
@@ -29,6 +30,7 @@ public class WidgetDisplayer {
         widgetDisplays.add(new DateWidgetDisplay(activity));
         widgetDisplays.add(new TimeWidgetDisplay(activity));
         widgetDisplays.add(new CalendarWidgetDisplay(activity));
+        widgetDisplays.add(new WidgetsDisplay(activity));
 
         for (WidgetDisplay widgetDisplay : widgetDisplays) {
             if (widgetDisplay.support()) {
@@ -119,6 +121,23 @@ public class WidgetDisplayer {
         @Override
         protected String equalsName() {
             return "日历";
+        }
+    }
+
+    class WidgetsDisplay extends AbstractWidgetDisplay {
+
+        protected WidgetsDisplay(Activity activity) {
+            super(activity);
+        }
+
+        @Override
+        protected Class getWidgetClass() {
+            return Widget.class;
+        }
+
+        @Override
+        protected String equalsName() {
+            return "组件";
         }
     }
 }

@@ -20,5 +20,6 @@
         <activity android:name="Time" android:label="@string/time"/>
         <activity android:name="Calendar" android:label="@string/calendar"/>
         <activity android:name="ListData" android:label="@string/list"/>
+        <activity android:name="com.example.activity.Widget" android:label="@string/widgets"/>
     </application>
 </manifest>
