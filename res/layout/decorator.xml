@@ -24,10 +24,10 @@
             android:id="@+id/listBtn" android:layout_row="1" android:layout_column="0"
             android:height="100dp"
             android:background="@android:color/holo_purple"/>
-    <Button android:layout_width="101dp" android:layout_height="wrap_content" android:text="按钮"
-            android:id="@+id/btn2" android:layout_row="1" android:layout_column="1" android:height="100dp"
+    <Button android:layout_width="101dp" android:layout_height="wrap_content" android:text="录音"
+            android:id="@+id/recordBtn" android:layout_row="1" android:layout_column="1" android:height="100dp"
             android:background="@android:color/holo_red_dark"/>
-    <Button android:layout_width="101dp" android:layout_height="wrap_content" android:text="按钮" android:id="@+id/btn3"
+    <Button android:layout_width="101dp" android:layout_height="wrap_content" android:text="视频" android:id="@+id/videoBtn"
             android:layout_row="1" android:layout_column="2" android:height="100dp" android:background="#fffd43"/>
     <Spinner
             android:layout_width="98dp"

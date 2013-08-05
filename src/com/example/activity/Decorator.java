@@ -3,6 +3,7 @@ package com.example.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -73,6 +74,26 @@ public class Decorator extends Activity {
             @Override
             public void onClick(View v) {
                 IntentRedirector.redirect(Decorator.this, ListData.class);
+            }
+        });
+
+        Button recordBtn = (Button) findViewById(R.id.recordBtn);
+        recordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("audio/amr");
+                startActivityForResult(intent, 3);
+            }
+        });
+
+        Button videoBtn = (Button) findViewById(R.id.videoBtn);
+        videoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
+                startActivityForResult(intent, 2);
             }
         });
     }
