@@ -1,6 +1,7 @@
 package com.example.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,7 +36,11 @@ public class Decorator extends Activity {
         shopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentRedirector.redirect(Decorator.this, ShopForm.class);
+
+                Intent intent = new Intent();
+                intent.putExtra("shopName", "星运超市");
+                intent.setClass(Decorator.this, ShopForm.class);
+                startActivity(intent);
             }
         });
 
