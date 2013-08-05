@@ -1,7 +1,6 @@
 package com.example.sample_with_android;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +29,8 @@ public class ShopForm extends Activity {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(ShopForm.this).setTitle(R.string.tip).setMessage(R.string.save).show();
+//                new AlertDialog.Builder(ShopForm.this).setTitle(R.string.tip).setMessage(R.string.save).show();
+                Toast.makeText(ShopForm.this, R.string.save, Toast.LENGTH_LONG).show();
             }
         });
 
