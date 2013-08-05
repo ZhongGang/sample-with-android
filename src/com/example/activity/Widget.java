@@ -6,8 +6,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.Toast;
 import com.example.sample_with_android.R;
 import com.example.sample_with_android.ShopForm;
@@ -23,10 +25,22 @@ public class Widget extends Activity {
     private ProgressDialog progressDialog;
     private ProgressDialog circleProgressDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.widgets);
+
+        GridLayout gridLayout = (GridLayout) findViewById(R.id.widgetsGridLayout);
+        gridLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Toast toast = Toast.makeText(Widget.this, R.string.touch, Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.BOTTOM, 0, 0);
+                toast.show();
+                return true;
+            }
+        });
 
         Button backBtn = (Button) findViewById(R.id.backBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +144,17 @@ public class Widget extends Activity {
                 notification.setLatestEventInfo(Widget.this, "下拉通知标题", "下拉通知内容", pendingIntent);
 
                 notificationManager.notify(1, notification);
+            }
+        });
+
+        Button touchBtn = (Button) findViewById(R.id.touchBtn);
+        touchBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Toast toast = Toast.makeText(Widget.this, R.string.touch, Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.BOTTOM, 0, 0);
+                toast.show();
+                return true;
             }
         });
     }
