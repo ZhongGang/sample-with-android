@@ -170,6 +170,14 @@ public class Widget extends Activity implements GestureDetector.OnGestureListene
                 controller.controller();
             }
         });
+
+        Button rectangleBtn = (Button) findViewById(R.id.rectangleBtn);
+        rectangleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentRedirector.redirect(Widget.this, RectangleActivity.class);
+            }
+        });
     }
 
     @Override

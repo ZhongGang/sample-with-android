@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">sample-with-android</string>
+    <string name="app_name">iWidgets</string>
     <string name="login.form">登录入口</string>
     <string name="shop.form">创建商铺</string>
     <string name="tip">提示</string>
@@ -12,6 +12,7 @@
     <string name="calendar">日历</string>
     <string name="list">列表展示数据</string>
     <string name="widgets">组件</string>
+    <string name="rectangle">自定义视图</string>
     <string name="touch">你触摸了我，你个坏淫，休得无礼！</string>
     <string name="gesture_down">触发了OnDown事件！！！</string>
     <string name="gesture_show_press">触发了OnShowPress事件！！！</string>

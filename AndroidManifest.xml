@@ -23,5 +23,6 @@
         <activity android:name="Calendar" android:label="@string/calendar" android:screenOrientation="portrait"/>
         <activity android:name="ListData" android:label="@string/list" android:screenOrientation="portrait"/>
         <activity android:name="Widget" android:label="@string/widgets" android:screenOrientation="portrait"/>
+        <activity android:name="RectangleActivity" android:label="@string/rectangle" android:screenOrientation="portrait"/>
     </application>
 </manifest>
