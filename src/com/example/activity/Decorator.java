@@ -29,7 +29,8 @@ public class Decorator extends Activity {
         logonBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentRedirector.redirect(Decorator.this, LoginForm.class);
+                Intent intent = new Intent("toLoginForm");
+                startActivity(intent);
             }
         });
 

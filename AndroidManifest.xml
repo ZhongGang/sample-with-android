@@ -16,13 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="LoginForm" android:label="@string/app_name" android:screenOrientation="portrait"/>
+        <activity android:name="LoginForm" android:label="@string/app_name" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="toLoginForm"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:name="ShopForm" android:label="@string/shop.form" android:screenOrientation="portrait"/>
         <activity android:name="Date" android:label="@string/date" android:screenOrientation="portrait"/>
         <activity android:name="Time" android:label="@string/time" android:screenOrientation="portrait"/>
         <activity android:name="Calendar" android:label="@string/calendar" android:screenOrientation="portrait"/>
         <activity android:name="ListData" android:label="@string/list" android:screenOrientation="portrait"/>
         <activity android:name="Widget" android:label="@string/widgets" android:screenOrientation="portrait"/>
-        <activity android:name="RectangleActivity" android:label="@string/rectangle" android:screenOrientation="portrait"/>
+        <activity android:name="RectangleActivity" android:label="@string/rectangle"
+                  android:screenOrientation="portrait"/>
     </application>
 </manifest>
