@@ -2,6 +2,7 @@ package com.example.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -95,6 +96,16 @@ public class Decorator extends Activity {
                 Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
                 intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
                 startActivityForResult(intent, 2);
+            }
+        });
+
+        Button dialBtn = (Button) findViewById(R.id.dialBtn);
+        dialBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:1001011"));
+                startActivity(intent);
             }
         });
     }
