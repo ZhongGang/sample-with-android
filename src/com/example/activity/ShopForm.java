@@ -3,9 +3,12 @@ package com.example.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -15,6 +18,20 @@ import android.widget.Toast;
  * Time: 下午4:36
  */
 public class ShopForm extends Activity {
+
+    private TextView addressLabel;
+
+    private Handler handler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            int what = msg.what;
+            if (what == 0) {
+                addressLabel.setText(String.valueOf(msg.obj));
+            }
+            super.handleMessage(msg);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +61,36 @@ public class ShopForm extends Activity {
                 startActivity(intent);
             }
         });
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                EditText addressInput = (EditText) findViewById(R.id.addressInput);
+                addressInput.setText("滨江花园");
+
+                addressLabel = (TextView) findViewById(R.id.addressLabel);
+                while (true) {
+                    String value = addressLabel.getText().toString();
+                    if (value.isEmpty()) {
+                        Message message = new Message();
+                        message.what = 0;
+                        message.obj = "地 址：";
+                        handler.sendMessage(message);
+                    } else {
+                        Message message = new Message();
+                        message.what = 0;
+                        message.obj = "";
+                        handler.sendMessage(message);
+                    }
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        throw new UnsupportedOperationException("Not yet implemented!");
+                    }
+                }
+            }
+        }).start();
     }
 
 
