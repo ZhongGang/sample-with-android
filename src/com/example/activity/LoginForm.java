@@ -5,7 +5,11 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class LoginForm extends Activity {
     /**
@@ -20,6 +24,12 @@ public class LoginForm extends Activity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                EditText usernameInput = (EditText) findViewById(R.id.usernameInput);
+                Animation animation = new RotateAnimation(0.0f, 360.0f);
+                animation.setInterpolator(new AccelerateDecelerateInterpolator());
+                animation.setDuration(3000);
+                usernameInput.startAnimation(animation);
+
                 new AlertDialog.Builder(LoginForm.this).setTitle(R.string.tip).setMessage(R.string.login).show();
             }
         });
