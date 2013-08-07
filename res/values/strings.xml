@@ -14,6 +14,8 @@
     <string name="widgets">组件</string>
     <string name="rectangle">自定义视图</string>
     <string name="touch">你触摸了我，你个坏淫，休得无礼！</string>
+    <string name="provider_disable">禁用位置提供者</string>
+    <string name="provider_enable">启用位置提供者</string>
     <string name="gesture_down">触发了OnDown事件！！！</string>
     <string name="gesture_show_press">触发了OnShowPress事件！！！</string>
     <string name="gesture_single_tap_up">触发了OnSingleTapUp事件！！！</string>

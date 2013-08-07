@@ -1,15 +1,17 @@
 package com.example.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.*;
 import com.example.core.IntentRedirector;
 import com.example.core.WidgetDisplayer;
 
@@ -106,6 +108,44 @@ public class Decorator extends Activity {
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:1001011"));
                 startActivity(intent);
+            }
+        });
+
+        Button locationBtn = (Button) findViewById(R.id.locationBtn);
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, new LocationListener() {
+                    @Override
+                    public void onLocationChanged(Location location) {
+
+                    }
+
+                    @Override
+                    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+                    }
+
+                    @Override
+                    public void onProviderEnabled(String provider) {
+                        Toast toast = Toast.makeText(Decorator.this, R.string.provider_enable, Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.BOTTOM, 0, 0);
+                        toast.show();
+                    }
+
+                    @Override
+                    public void onProviderDisabled(String provider) {
+                        Toast toast = Toast.makeText(Decorator.this, R.string.provider_disable, Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.BOTTOM, 0, 0);
+                        toast.show();
+                    }
+                });
+
+                Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                Toast toast = Toast.makeText(Decorator.this, "当前位置信息｛经度：" + location.getLatitude() + "；纬度：" + location.getLongitude() + "；海拔：" + location.getAltitude() + "｝", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.BOTTOM, 0, 0);
+                toast.show();
             }
         });
     }

@@ -22,7 +22,9 @@ public class RectangleView extends View {
     protected void onDraw(Canvas canvas) {
         Paint paint = new Paint();
         paint.setColor(Color.RED);
-        canvas.drawRect(50, 50, 100, 100, paint);
-        canvas.drawText("这是自定义视图组件", 120, 120, paint);
+        canvas.drawRect(100, 100, 400, 400, paint);
+        paint.setColor(Color.BLUE);
+        paint.setTextSize(30);
+        canvas.drawText("这是自定义视图组件", 200, 200, paint);
     }
 }
