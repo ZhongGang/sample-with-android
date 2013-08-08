@@ -1,6 +1,5 @@
 package com.example.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -21,7 +20,7 @@ import com.example.core.WidgetDisplayer;
  * Date: 13-8-5
  * Time: 下午7:50
  */
-public class Decorator extends Activity {
+public class Decorator extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

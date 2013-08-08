@@ -19,7 +19,7 @@ import com.example.core.IntentRedirector;
  * Date: 13-8-5
  * Time: 下午2:30
  */
-public class Widget extends Activity implements GestureDetector.OnGestureListener {
+public class Widget extends MenuActivity implements GestureDetector.OnGestureListener {
 
     private ProgressDialog progressDialog;
     private ProgressDialog circleProgressDialog;
