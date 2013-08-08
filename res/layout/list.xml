@@ -6,11 +6,11 @@
               android:layout_height="match_parent" android:background="@android:color/holo_orange_dark">
 
     <ListView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/listView"/>
     <Button
-            android:layout_width="157dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="返 回"
             android:id="@+id/back" android:layout_gravity="center" android:textSize="25dp" android:textStyle="bold"
