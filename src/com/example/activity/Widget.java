@@ -48,11 +48,11 @@ public class Widget extends MenuActivity implements GestureDetector.OnGestureLis
             }
         });
 
-        Button backBtn = (Button) findViewById(R.id.backBtn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        Button drawerBtn = (Button) findViewById(R.id.drawerBtn);
+        drawerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentRedirector.redirect(Widget.this, Decorator.class);
+                IntentRedirector.redirect(Widget.this, DrawerActivity.class);
             }
         });
 

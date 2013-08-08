@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="@android:color/holo_orange_dark">
+
+    <SlidingDrawer
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:content="@+id/content"
+            android:handle="@+id/drawer" android:id="@+id/slidingDrawer" android:layout_gravity="center">
+        <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:background="@android:color/holo_blue_dark">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="产品名称："
+                    android:id="@+id/textView" android:layout_gravity="center_horizontal|top"/>
+            <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText" android:layout_gravity="center_horizontal|top"/>
+        </LinearLayout>
+        <Button
+                android:id="@+id/drawer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="向上拖动"/>
+    </SlidingDrawer>
+</LinearLayout>
