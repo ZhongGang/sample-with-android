@@ -2,6 +2,7 @@ package com.example.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -40,13 +41,30 @@ public class ShopForm extends Activity {
 
         Intent intent = getIntent();
         String shopName = intent.getStringExtra("shopName");
-        EditText descriptionInput = (EditText) findViewById(R.id.description);
+        final EditText nameInput = (EditText) findViewById(R.id.nameInput);
+        final EditText addressInput = (EditText) findViewById(R.id.addressInput);
+        final EditText descriptionInput = (EditText) findViewById(R.id.descriptionInput);
         descriptionInput.setText(shopName);
+
+        final SharedPreferences preferences = getSharedPreferences("SHOP", MODE_PRIVATE);
+        final String nameOfShop = preferences.getString("shopName", "");
+        nameInput.setText(nameOfShop);
+        String addressOfShop = preferences.getString("shopAddress", "");
+        addressInput.setText(addressOfShop);
+        String descriptionOfShop = preferences.getString("shopDescription", "");
+        descriptionInput.setText(descriptionOfShop);
 
         Button saveBtn = (Button) findViewById(R.id.save);
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SharedPreferences.Editor edit = preferences.edit();
+                edit.putString("shopName", String.valueOf(nameInput.getText()));
+                edit.putString("shopAddress", String.valueOf(addressInput.getText()));
+                edit.putString("shopDescription", String.valueOf(descriptionInput.getText()));
+                edit.commit();
+
 //                new AlertDialog.Builder(ShopForm.this).setTitle(R.string.tip).setMessage(R.string.save).show();
                 Toast.makeText(ShopForm.this, R.string.save, Toast.LENGTH_LONG).show();
             }
@@ -65,9 +83,6 @@ public class ShopForm extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                EditText addressInput = (EditText) findViewById(R.id.addressInput);
-                addressInput.setText("滨江花园");
-
                 addressLabel = (TextView) findViewById(R.id.addressLabel);
                 while (true) {
                     String value = addressLabel.getText().toString();

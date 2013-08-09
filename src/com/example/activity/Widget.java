@@ -52,7 +52,7 @@ public class Widget extends MenuActivity implements GestureDetector.OnGestureLis
         drawerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentRedirector.redirect(Widget.this, Decorator.class);
+                IntentRedirector.redirect(Widget.this, DrawerActivity.class);
             }
         });
 

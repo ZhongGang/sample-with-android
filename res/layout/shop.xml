@@ -16,7 +16,7 @@
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/name" android:layout_column="3" android:width="200dp"/>
+                android:id="@+id/nameInput" android:layout_column="3" android:width="200dp"/>
     </TableRow>
     <TableRow
             android:layout_width="fill_parent"
@@ -44,7 +44,8 @@
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/description" android:layout_column="3" android:password="false"/>
+                android:id="@+id/descriptionInput" android:layout_column="3" android:password="false"
+                android:minHeight="120dp"/>
     </TableRow>
     <TableRow
             android:layout_width="fill_parent"
