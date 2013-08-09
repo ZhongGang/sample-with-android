@@ -33,5 +33,12 @@
         <activity android:name="DrawerActivity" android:label="@string/drawer" android:screenOrientation="portrait"/>
         <activity android:name="RectangleActivity" android:label="@string/rectangle"
                   android:screenOrientation="portrait"/>
+
+        <receiver android:name="com.example.broadcast.BootstrapBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

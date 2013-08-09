@@ -22,6 +22,14 @@ public class ListData extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list);
 
+        Intent intent = getIntent();
+        boolean bootstrap = intent.getBooleanExtra("bootstrap", false);
+        if (bootstrap) {
+            Toast toast = Toast.makeText(this, "这是由开机自启动通知运行进入的这个界面！", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.BOTTOM, 0, 0);
+            toast.show();
+        }
+
         ListView listView = (ListView) findViewById(R.id.listView);
         ListAdapter listAdapter = ArrayAdapter.createFromResource(this, R.array.listData, android.R.layout.simple_expandable_list_item_1);
         listView.setAdapter(listAdapter);
