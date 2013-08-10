@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<set>
+
+    <rotate duration="3000" fromDegrees="0.0f" toDegrees="360.0f"/>
+
+    <!--<scale duration="3000"/>-->
+
+    <!--<translate duration="3000"/>-->
+
+    <alpha duration="3000" fromAlpha="0" toAlpha="1"/>
+</set>

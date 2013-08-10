@@ -1,13 +1,19 @@
 package com.example.activity;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,19 +36,30 @@ public class ListData extends Activity {
             toast.show();
         }
 
+        final List<String> contacts = new ArrayList<String>();
+        ContentResolver contentResolver = getContentResolver();
+        Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI, new String[]{ContactsContract.Contacts.DISPLAY_NAME}, null, null, null);
+        while (cursor.moveToNext()) {
+            String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+            contacts.add(name);
+        }
+
+        cursor.close();
+
         ListView listView = (ListView) findViewById(R.id.listView);
-        ListAdapter listAdapter = ArrayAdapter.createFromResource(this, R.array.listData, android.R.layout.simple_expandable_list_item_1);
+//        ListAdapter listAdapter = ArrayAdapter.createFromResource(this, R.array.listData, android.R.layout.simple_expandable_list_item_1);
+        ListAdapter listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, contacts);
         listView.setAdapter(listAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                CharSequence[] strings = getResources().getTextArray(R.array.listData);
+//                CharSequence[] strings = getResources().getTextArray(R.array.listData);
                 Toast toast = new Toast(ListData.this);
                 LayoutInflater inflate = getLayoutInflater();
                 View linearLayout = inflate.inflate(R.layout.toast, (ViewGroup) findViewById(R.id.toast_linear_layout));
                 TextView textView = (TextView) linearLayout.findViewById(R.id.message);
-                textView.setText("你选择了{" + strings[position].toString() + "}");
+                textView.setText("你选择了{" + contacts.get(position) + "}");
                 toast.setView(linearLayout);
 
                 ImageView imageView = (ImageView) linearLayout.findViewById(R.id.toastImage);
