@@ -113,10 +113,11 @@ public class Widget extends MenuActivity implements GestureDetector.OnGestureLis
         });
 
         Button dialogBtn = (Button) findViewById(R.id.dialogBtn);
-        dialogBtn.setOnClickListener(new View.OnClickListener() {
+        dialogBtn.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onTouch(View v, MotionEvent event) {
                 new AlertDialog.Builder(Widget.this).setTitle(R.string.tip).setMessage(R.string.dialog_message).show();
+                return true;
             }
         });
 
